@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Health</title>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="Tooplate">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link rel="stylesheet" href="css/magnific-popup.css">
+
+     <link rel="stylesheet" href="css/font-awesome.min.css">
+     <link rel="stylesheet" href="css/animate.css">
+
+     <link rel="stylesheet" href="css/owl.carousel.css">
+     <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="css/tooplate-style.css">
+
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+     <!-- PRE LOADER -->
+     <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+               
+          </div>
+     </section>
+
+
+     <!-- HEADER -->
+     <header>
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-4 col-sm-3">
+                         <p>欢迎使用219医院信息管理系统</p>
+                    </div>
+                         
+                    <div class="col-md-8 col-sm-9 text-align-right">
+
+                         <span class="email-icon"><a href="#">白衣天使您辛苦了</a></span>
+                    </div>
+
+               </div>
+          </div>
+     </header>
+
+
+     <!-- MENU -->
+     <section class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                    <a href="index.html" class="navbar-brand"><i class="fa fa-T-square"></i>Team：219</a>
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                         <li><a href="#top" class="smoothScroll">回到顶部</a></li>
+                         <li><a href="#appointment" class="smoothScroll">医生信息</a></li>
+                         <li><a href="#team" class="smoothScroll">病人信息</a></li>
+                         <li><a href="news-detail.html#news" class="smoothScroll">科室管理</a></li>
+                         <li><a href="news-detail.html#google-map" class="smoothScroll">收费项目管理</a></li>
+                         <li class="appointment-btn"><a href="index.html#top">返回首页</a></li>
+                    </ul>
+               </div>
+
+          </div>
+     </section>
+  <section id="appointment" data-stellar-background-ratio="3">
+       <div class="container">
+             <div class="row">
+
+                    <div class="col-md-6 col-sm-6">
+                          <img src="images/slider1.jpg" class="img-responsive" alt="">
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                          <!-- CONTACT FORM HERE -->
+                          <form id="appointment-form" role="form" method="post" action="#">
+
+                                <!-- SECTION TITLE -->
+                                <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
+                                      <h2>医生信息管理</h2><a href="http://nicelee.free.idcfengye.com/hos/selectAllDoctor"><h4>  查询所有医生</h4></a>
+                                </div>
+
+                                <div class="wow fadeInUp" data-wow-delay="0.8s">
+                                      <div class="col-md-6 col-sm-6">
+                                             <label for="name">ID</label>
+                                             <input type="text" class="form-control" id="ID" name="id" >
+                                      </div>
+                                        <div class="col-md-6 col-sm-6">
+                                             <label for="id">姓名</label>
+                                             <input type="text" class="form-control" id="name" name="name">
+                                      </div>
+                                       <div class="col-md-6 col-sm-6">
+                                             <label for="select">科室</label>
+                                             <select class="form-control">
+                                                   <option>1.外科</option>
+                                                   <option>2.儿科</option>>
+                                                   <option>3.急诊科</option>
+                                             </select>
+                                      </div>
+                                       <div class="col-md-6 col-sm-6">
+                                             <label for="select">性别</label>
+                                             <select class="form-control">
+                                                   <option>男</option>
+                                                   <option>女</option>
+                                             </select>
+                                      </div>
+                                      <div class="col-md-12 col-sm-12">
+                                             <button type="submit" class="form-control" id="cf-submit" name="submit"><a href="http://nicelee.free.idcfengye.com/hos/insertDoctor?sex=1&departid=2&name=蒜头王八&id=9">录入</a></button>
+                                                  <button type="reset" class="form-control" id="cf-reset" name="reset"><a href="http://nicelee.free.idcfengye.com/hos/deleteDor?id=9">删除</a></button>
+                                                <button type="reset" class="form-control" id="cf-reset" name="reset"><a href="http://nicelee.free.idcfengye.com/hos/updateDoctor?departid=3&id=9">修改</a></button>  
+                                      </div>
+                                </div>
+                         </form>
+                    </div>
+
+             </div>
+       </div>
+ </section>
+  <section id="team" data-stellar-background-ratio="3">
+       <div class="container">
+             <div class="row">
+
+                    <div class="col-md-6 col-sm-6">
+                          <img src="images/news-image3.jpg" class="img-responsive" alt="">
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                          <!-- CONTACT FORM HERE -->
+                          <form id="appointment-form" role="form" method="post" action="#">
+
+                                <!-- SECTION TITLE -->
+                                <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
+                                      <h2>病人信息管理</h2><a href="http://nicelee.free.idcfengye.com/hos/selectAllPatient"><h4>  查询所有病人</h4></a>
+                                </div>
+
+                           <div class="wow fadeInUp" data-wow-delay="0.8s">
+                                      <div class="col-md-6 col-sm-6">
+                                             <label for="name">ID</label>
+                                             <input type="text" class="form-control" id="id" name="id" >
+                                      </div>
+                                        <div class="col-md-6 col-sm-6">
+                                             <label for="id">姓名</label>
+                                             <input type="text" class="form-control" id="name" name="name">
+                                      </div>
+                                       
+                                       <div class="col-md-6 col-sm-6">
+                                             <label for="select">性别</label>
+                                             <select class="form-control">
+                                                   <option>男</option>
+                                                   <option>女</option>
+                                             </select>
+                                      </div>
+                                      <div class="col-md-12 col-sm-12">
+                                         <label for="Message">病情信息</label>
+                                             <input type="text" class="form-control" id="name" name="name">
+                                             <button type="submit" class="form-control" id="cf-submit" name="submit"><a href="http://nicelee.free.idcfengye.com/hos/insertPatient?name=小邋遢&sex=1&disease=扭伤&id=6">录入</a></button>
+                                        
+                                             <button type="submit" class="form-control" id="cf-submit" name="submit"><a href="http://nicelee.free.idcfengye.com/hos/deletePatient?id=6"> 删除</a></button>
+                                            <button type="submit" class="form-control" id="cf-submit" name="submit"><a href="http://nicelee.free.idcfengye.com/hos/updatePatient?disease=胃痛&id=6">修改</a></button>  
+                                      </div>
+                                </div>
+                         </form>
+                    </div>
+
+             </div>
+       </div>
+ </section>
+<section id="appointment" data-stellar-background-ratio="3">
+       <div class="container">
+             <div class="row">
+
+                    <div class="col-md-6 col-sm-6">
+                          <img src="images/adada.jpg" class="img-responsive" alt="">
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                          <!-- CONTACT FORM HERE -->
+                          <form id="appointment-form" role="form" method="post" action="#">
+
+                                <!-- SECTION TITLE -->
+                                <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
+                                      <h2>科室信息管理</h2> <a href="http://nicelee.free.idcfengye.com/hos/selectAllDer"><h4>  查询所有科室信息</h4></a>
+                                </div>
+
+                                <div class="wow fadeInUp" data-wow-delay="0.8s">
+
+                                   <div class="col-md-6 col-sm-6">
+                                             <label for="id">ID</label>
+                                             <input type="text" class="form-control" id="id" name="id">
+                                      </div>
+                                      <div class="col-md-6 col-sm-6">
+                                             <label for="name">科室名称</label>
+                                             <input type="text" class="form-control" id="name" name="name" >
+                                      </div>
+                                        
+                                     <div class="col-md-6 col-sm-6">
+                                             <label for="id">科室简介</label>
+                                             <input type="text" class="form-control" id="text" name="text">
+                                      </div>
+                                      <div class="col-md-12 col-sm-12">
+
+                                             <button type="submit" class="form-control" id="cf-submit" name="submit"><a href="http://nicelee.free.idcfengye.com/hos/addDepartment?name=牙科&content=处理牙齿疾病&id=4">录入科室</a></button>
+                                               <button type="reset" class="form-control" id="cf-reset" name="reset"><a href="http://nicelee.free.idcfengye.com/hos/updateDEPART?name=五官科&id=4">修改科室</a></button>
+
+                                      </div>
+                                </div>
+                         </form>
+                    </div>
+
+             </div>
+       </div>
+ </section>
+  <section id="appointment" data-stellar-background-ratio="3">
+       <div class="container">
+             <div class="row">
+
+                    <div class="col-md-6 col-sm-6">
+                          <img src="images/aaaa.jpg" class="img-responsive" alt="">
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                          <!-- CONTACT FORM HERE -->
+                          <form id="appointment-form" role="form" method="post" action="#">
+
+                                <!-- SECTION TITLE -->
+                                <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
+                                      <h2>收费项目管理</h2><a href="http://nicelee.free.idcfengye.com/hos/selectAllpay"><h4>查询所有收费项目</h4></a>
+                                </div>
+
+                           <div class="wow fadeInUp" data-wow-delay="0.8s">
+                                        <div class="col-md-6 col-sm-6">
+                                             <label for="id">ID</label>
+                                             <input type="text" class="form-control" id="id" name="id">
+                                      </div>
+                                         <div class="col-md-6 col-sm-6">
+                                             <label for="moneny">收费金额</label>
+                                             <input type="text" class="form-control" id="money" name="moneny">
+                                      </div>
+                                     
+                                      <div class="col-md-12 col-sm-12">
+                                         <label for="Message">收费描述</label>
+                                             <input type="text" class="form-control" id="text" name="text">
+                                                  <button type="submit" class="form-control" id="cf-submit" name="submit"><a href="http://nicelee.free.idcfengye.com/hos/addPay?money=30&content=针灸&id=117">增加</a></button>
+                                                   <button type="reset" class="form-control" id="cf-reset" name="reset"><a href="http://nicelee.free.idcfengye.com/hos/deletePay?id=117">删除</a></button>
+                                                <button type="reset" class="form-control" id="cf-reset" name="reset"><a href="http://nicelee.free.idcfengye.com/hos/updatePay?money=25&id=117">修改</a></button>  
+                                      </div>
+                                </div>
+                         </form>
+                    </div>
+
+             </div>
+       </div>
+ </section>
+   <section id="appointment" data-stellar-background-ratio="3">
+       <div class="container">
+             <div class="row">
+
+                    <div class="col-md-6 col-sm-6">
+                          <img src="images/appointment-image.jpg" class="img-responsive" alt="">
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                          <!-- CONTACT FORM HERE -->
+                          <form id="appointment-form" role="form" method="post" action="#">
+
+                                <!-- SECTION TITLE -->
+                                <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
+                                      <h2>药品信息管理</h2>
+                                </div>
+
+                           <div class="wow fadeInUp" data-wow-delay="0.8s">
+
+                                      <div class="col-md-6 col-sm-6">
+                                             <label for="id">ID</label>
+                                             <input type="text" class="form-control" id="id" name="id">
+                                      </div>
+                                        <div class="col-md-6 col-sm-6">
+                                             <label for="name">名字</label>
+                                             <input type="text" class="form-control" id="name" name="name" >
+                                      </div>
+                                        
+                                         <div class="col-md-6 col-sm-6">
+                                             <label for="moneny">价格</label>
+                                             <input type="text" class="form-control" id="money" name="moneny">
+                                      </div>
+                                    <div class="col-md-6 col-sm-6">
+                                             <label for="moneny">数量</label>
+                                             <input type="text" class="form-control" id="number" name="number">
+                                      </div>
+                                      <div class="col-md-12 col-sm-12">
+                                         <label for="Message">用途描述</label>
+                                             <textarea class="form-control" rows="5" id="message" name="message" ></textarea>
+                                                  <button type="reset" class="form-control" id="cf-reset" name="reset"><a href="http://nicelee.free.idcfengye.com/hos/addMedicine?name=维生素&id=4&foruse=补充维生素&util_price=2&Quantity=100">增加药品</a></button>
+                                                <button type="reset" class="form-control" id="cf-reset" name="reset"><a href="http://nicelee.free.idcfengye.com/hos/updateMeNumber?id=4&Quantity=0">销毁药品</button>  
+                                             <button type="submit" class="form-control" id="cf-submit" name="submit"><a href="http://nicelee.free.idcfengye.com/hos/selectAllMe">查找所有药品信息</a></button>
+                                      </div>
+                                </div>
+                         </form>
+                    </div>
+
+             </div>
+       </div>
+ </section>
+  </section>
+   <section id="appointment" data-stellar-background-ratio="3">
+       <div class="container">
+             <div class="row">
+
+                    <div class="col-md-6 col-sm-6">
+                          <img src="images/4949494.jpg" class="img-responsive" alt="">
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                          <!-- CONTACT FORM HERE -->
+                          <form id="appointment-form" role="form" method="post" action="#">
+
+                                <!-- SECTION TITLE -->
+                                <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
+                                      <h2>费用信息查询</h2>
+                                </div>
+
+                           <div class="wow fadeInUp" data-wow-delay="0.8s">
+                                      <div class="col-md-6 col-sm-6">
+                                             <label for="id">ID</label>
+                                             <input type="text" class="form-control" id="id" name="id">
+                                      </div>
+                                 
+                                      <div class="col-md-12 col-sm-12">
+                                             <button type="submit" class="form-control" id="cf-submit" name="submit"><a href="http://nicelee.free.idcfengye.com/hos/selectTreatById?id=2">根据ID查询病人的治疗信息</a></button> 
+                                             <br>   
+                                             <label for="name">请输入日期</label>
+                                             <input type="text" class="form-control" id="name" name="name" placeholder="yyyy-MM-dd">
+                                             <button type="submit" class="form-control" id="cf-submit" name="submit"><a href="http://nicelee.free.idcfengye.com/hos/selectTreatByTime?createTime=2020-06-17">查询当天所办理业务</a></button> 
+
+                                             <button type="submit" class="form-control" id="cf-submit" name="submit"><a href="http://nicelee.free.idcfengye.com/hos/selectAllTreat">查询所有已办理业务</a></button> 
+                                      </div>
+                                </div>
+                         </form>
+                    </div>
+             </div>
+       </div>
+ </section>
+<section id="download" data-stellar-background-ratio="3">
+       <div class="container">
+             <div class="row">
+
+                    <div class="col-md-6 col-sm-6">
+                          <img src="images/v.jpg" class="img-responsive" alt="">
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                          <!-- CONTACT FORM HERE -->
+                          <form id="appointment-form" role="form" method="post" action="#">
+
+                                <!-- SECTION TITLE -->
+                                <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
+                                      <h2>票据废除及查询系统</h2>
+                                </div>
+
+                                <div class="wow fadeInUp" data-wow-delay="0.8s">
+                                      <div class="col-md-6 col-sm-6">
+                                             <label for="name">请输入病人的专属医用ID</label>
+                                             <input type="text" class="form-control" id="name" name="name" placeholder="ID Number">
+                                        <a href="http://nicelee.free.idcfengye.com/hos/updateTreat?id=111"><H3>废除票据</H3></a>    
+                                      </div>   
+                                       <br>
+                                       <br>
+                                      <button type="submit" class="form-control" id="cf-submit" name="submit"><a href="http://nicelee.free.idcfengye.com/hos/selectEmptyTreat">查询所有已废除票据</a></button>                               
+                                </div>
+                         </form>
+                    </div>
+
+             </div>
+       </div>
+ </section>
+
+     <!-- NEWS DETAIL -->
+     <section id="news-detail" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+                    <div class="col-md-8 col-sm-7">
+                         <!-- NEWS THUMB -->
+                         <div class="news-detail-thumb">     
+                              <div class="news-social-share">
+                                   <h4>Share our hospial</h4>
+                                        <a href="#" class="btn btn-primary"><i class="fa fa-facebook"></i>Facebook</a>
+                                        <a href="#" class="btn btn-success"><i class="fa fa-twitter"></i>Twitter</a>
+                                        <a href="#" class="btn btn-danger"><i class="fa fa-google-plus"></i>Google+</a>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </section>        
+     <!-- FOOTER -->
+     <footer data-stellar-background-ratio="5">
+          <div class="container">
+               <div class="row">
+                    <div class="col-md-12 col-sm-12 border-top">
+                         <div class="col-md-4 col-sm-6">
+                              <div class="copyright-text"> 
+                                   <p>Copyright &copy; 2020.219.hospital</p>
+                              </div>
+                         </div>
+                         <div class="col-md-6 col-sm-6">
+                              <div class="footer-link"> 
+                                   <a href="#">Laboratory Tests</a>
+                                   <a href="#">Departments</a>
+                                   <a href="#">Insurance Policy</a>
+                                   <a href="#">Careers</a>
+                              </div>
+                         </div>
+                         <div class="col-md-2 col-sm-2 text-align-center">
+                              <div class="angle-up-btn"> 
+                                  <a href="#top" class="smoothScroll wow fadeInUp" data-wow-delay="1.2s"><i class="fa fa-angle-up"></i></a>
+                              </div>
+                         </div>   
+                    </div>
+                    
+               </div>
+          </div>
+     </footer>
+
+
+     <!-- SCRIPTS -->
+     <script src="js/jquery.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script src="js/jquery.sticky.js"></script>
+     <script src="js/jquery.stellar.min.js"></script>
+     <script src="js/jquery.magnific-popup.min.js"></script>
+     <script src="js/magnific-popup-options.js"></script>
+     <script src="js/wow.min.js"></script>
+     <script src="js/smoothscroll.js"></script>
+     <script src="js/owl.carousel.min.js"></script>
+     <script src="js/custom.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper  namespace="org.hospital.Dao.HospitalMapper">
+
+     <!-- 注册用户信息 -->
+     <insert id="regist" parameterType="org.hospital.pojo.User">
+          insert into user(id,username,password) values(null,#{userName},#{passWord})
+     </insert>
+     
+     <!-- 查询是否含有当前用户信息 -->
+     <select id="isUserSet" resultType="int">
+          select count(*) from user where username=#{userName}
+     </select>
+     
+          
+     <!--根据用户名查找密码，用于登录时候的密码校验-->
+     <select id="login" resultType="int">
+          select count(*) from user where username=#{userName} and password=#{passWord}
+     </select>
+
+
+     <!-- 插入病人 -->
+     <insert id="insertPatient" parameterType="org.hospital.pojo.Patient">
+          insert into patient(ID,NAME,SEX,DISEASE) values(#{id},#{name},#{sex},#{disease})
+     </insert>
+     
+     <!-- 根据病号删除病人 -->
+     <delete id="deletePatient" parameterType="int">
+          delete from patient where ID=#{id}
+     </delete>
+     
+     <!-- 根据病号查找病人 -->
+     <select id="selectByID" resultType="org.hospital.pojo.Patient" parameterType="int">
+          select ID,NAME,SEX,DISEASE from patient where ID=#{id}
+     </select>
+     
+     <!-- 查找id，看这个id的病人是否存在1存在0为空 -->
+     <select id="selectExit" resultType="int">
+          select count(*) from patient where ID=#{id}
+     </select>
+     
+     <!-- 根据病号更改病人信息 -->
+     <update id="updatePatient" parameterType="org.hospital.pojo.Patient">
+          update patient
+	     <trim prefix="set" suffixOverrides=",">
+		  <if test="name!=null">NAME =#{name},</if>
+		  <if test="sex!=null">SEX=#{sex},</if>
+		  <if test="disease!=null">DISEASE=#{disease},</if>
+		  <!-- <if test="time!=null">Createtime=#{time},</if> -->
+		 </trim>
+  		where ID = #{id}
+     </update>
+     
+     <!-- 查找所有病人 -->
+     <select id="selectAllPatient" resultType="org.hospital.pojo.Patient">
+          select * from patient order by ID asc
+     </select>
+     
+     
+     
+     <!-- 增加医生信息 -->
+     <insert id="insertDoctor" parameterType="org.hospital.pojo.Doctor">
+          insert into doctor(ID,NAME,SEX,departid) values(#{id},#{name},#{sex},#{departid})
+     </insert>
+     
+     <!-- 判断医生是否存在 -->
+     <select id="selectDorExit" resultType="int">
+          select count(*) from doctor where ID=#{id}
+     </select>
+     
+     <!-- 根据职工号查找医生信息 -->
+     <select id="selectDorById" resultType="org.hospital.pojo.Doctor">
+          select ID,NAME,SEX,departid from doctor where ID=#{id}
+     </select>
+     
+     <!-- 查找全部医生信息 -->
+     <select id="selectAllDoctor" resultType="org.hospital.pojo.Doctor">
+          select * from doctor order by ID asc
+     </select>
+     
+     <!-- 删除医生信息 -->
+     <delete id="deleteDor">
+          delete  from doctor where ID=#{id}
+     </delete>
+
+     <!-- 修改医生信息 -->
+     <update id="updateDoctor" parameterType="org.hospital.pojo.Doctor">
+          update doctor
+          <trim prefix="set" suffixOverrides=",">
+          <if test="name!=null">NAME=#{name},</if>
+		  <if test="sex!=null">SEX=#{sex},</if>
+		  <if test="departid!=null">departid=#{departid},</if>
+          </trim>
+          where ID=#{id}
+     </update>
+     
+     <!-- 增加科室信息 -->
+     <insert id="addDepartment" parameterType="org.hospital.pojo.Department">
+          insert into department(ID,name,content) values(#{id},#{name},#{content})
+     </insert>
+     
+     <!-- 根据科室ID查找医生 -->
+     <select id="selectDeDor" resultType="org.hospital.pojo.DoctorWithDepart">
+          select d.ID as id,d.NAME as name,d.SEX as sex,c.name as deName from doctor d,department c where d.departid=c.ID and c.ID=#{id}
+     </select>
+     
+     <!-- 查找所有科室信息 -->
+     <select id="selectAllDer" resultType="org.hospital.pojo.Department">
+          select * from department order by ID asc
+     </select>
+     
+     <!-- 修改科室信息 -->
+     <update id="updateDEPART" parameterType="org.hospital.pojo.Department">
+          update department set name=#{name},content=#{content} where ID=#{id}
+     </update>
+     
+     <!-- 判断科室信息是否存在 -->
+     <select id="selectDEExit" resultType="int">
+          select count(*) from department where ID=#{id}
+     </select>
+     
+     <!-- 增加收费项目 -->
+     <insert id="addPay" parameterType="org.hospital.pojo.Pay">
+          insert into Pay(ID,content,MONEY) values(#{id},#{content},#{money})
+     </insert>
+     
+     <!-- 判断收费项目是否存在 -->
+     <select id="payExit" resultType="int">
+          select count(*) from pay where ID=#{id}
+     </select>
+     
+     <!-- 删除收费项目 -->
+     <delete id="deletePay" >
+          delete from pay where ID=#{id}
+     </delete>
+     
+     <!-- 修改收费项目 -->
+     <update id="updatePay" parameterType="org.hospital.pojo.Pay">
+          update pay
+          <trim prefix="set" suffixOverrides=",">
+          <if test="money!=null">MONEY=#{money},</if>
+		  <if test="content!=null">content=#{content},</if>
+          </trim>
+          where ID=#{id}
+     </update>
+     
+     <!-- 查找所有收费项目 -->
+     <select id="selectAllpay" resultType="org.hospital.pojo.Pay">
+          select * from pay order by ID asc
+     </select>
+     
+     <!-- 根据ID查找收费项目 -->
+     <select id="selectPayById" resultType="org.hospital.pojo.Pay">
+          select * from pay where ID=#{id}
+     </select>
+     
+     <!-- 查找所有药品信息 -->
+     <select id="selectAllMe" resultType="org.hospital.pojo.Medicine">
+          select * from medicine
+     </select>
+     
+     <!-- 更改药品数量:销毁或存入 -->
+     <update id="updateMeNumber" parameterType="org.hospital.pojo.Medicine">
+          update medicine
+               <trim prefix="set" suffixOverrides=",">
+                    <if test="name!=null">NAME=#{name},</if>
+                    <if test="foruse!=null">FORUSE=#{foruse},</if>
+                    <if test="util_price!=null">UTIL_PRICE=#{util_price},</if>
+                    <if test="Quantity!=null">Quantity=#{Quantity},</if>
+               </trim> 
+          where ID=#{id}
+     </update>
+     
+     <!-- 根据id查找药品 -->
+     <select id="selectMeById" resultType="org.hospital.pojo.Medicine">
+          select * from medicine where ID=#{id}
+     </select>
+     
+     <!-- 添加药品 -->
+     <insert id="addMedicine" parameterType="org.hospital.pojo.Medicine">
+          insert into medicine values(#{id},#{name},#{foruse},#{util_price},#{Quantity})
+     </insert>
+     
+     <!-- 根据病号查找治疗收费以及病人信息 -->
+     <select id="selectTreatById" resultType="org.hospital.pojo.Treatment">
+          select t.id,t.pay_id,t.patient_id,t.effective,t.CreateTime as createTime,c.NAME,p.MONEY,p.content from treatment t,pay p,patient c where t.pay_id=p.ID and t.patient_id=c.ID and c.ID=#{id};     
+     </select>
+     
+     <!-- 查找全部的治疗收费以及病人信息 -->
+     <select id="selectAllTreat" resultType="org.hospital.pojo.Treatment">
+          select t.id,t.pay_id,t.patient_id,t.effective,t.CreateTime as createTime,c.NAME,p.MONEY,p.content from treatment t,pay p,patient c where t.pay_id=p.ID and t.patient_id=c.ID    
+     </select>
+     
+     <!-- 废除票据（收费信息）将effective改为0 -->
+     <update id="updateTreat" parameterType="int">
+          update treatment set effective=0 where id=#{id}
+     </update>
+     
+     <!-- 专门查询废票系统 effective=0-->
+     <select id="selectEmptyTreat" resultType="org.hospital.pojo.Treatment">
+          select t.id,t.pay_id,t.patient_id,t.effective,t.CreateTime as createTime,p.content,p.MONEY,c.NAME from treatment t,pay p,patient c where t.pay_id=p.ID and t.patient_id=c.ID and t.effective=0
+     </select>
+     
+     <!-- 查询某天的票据信息 -->
+     <select id="selectTreatByTime" resultType="org.hospital.pojo.Treatment">
+          select t.id,t.pay_id,t.patient_id,t.effective,t.CreateTime as createTime,p.content,p.MONEY,c.NAME from treatment t,pay p,patient c where t.pay_id=p.ID and t.patient_id=c.ID and t.createTime=#{createTime}
+     </select>
+     
+</mapper>
